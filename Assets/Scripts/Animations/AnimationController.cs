@@ -12,4 +12,5 @@ public class AnimationController : MonoBehaviour
     {
         animator.Play(animationName);
     }
+
 }

@@ -23,7 +23,6 @@ public class FireBehavior : MonoBehaviour
             fireLife = Mathf.Min(fireLife, 1.0f);
         }
 
-        UpdateFireVisual();
     }
 
     public void StartExtinguishing()
@@ -34,12 +33,5 @@ public class FireBehavior : MonoBehaviour
     public void StopExtinguishing()
     {
         isBeingExtinguished = false;
-    }
-
-    private void UpdateFireVisual()
-    {
-        var main = fireParticleSystem.main;
-        main.startSize = Mathf.Lerp(0.5f, 1.0f, fireLife);
-        main.startColor = Color.Lerp(Color.gray, Color.red, fireLife);
     }
 }
