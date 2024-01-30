@@ -357,6 +357,7 @@ MonoBehaviour:
   extinguishingParticleSystem: {fileID: 7610121475294557469}
   tipCameraAnimation: {fileID: 2033664649}
   tipUI: {fileID: 238431909}
+  heightSlider: {fileID: 2093899105}
   cameraTipUI: {fileID: 22097063}
   isSafetyPinRemoved: 0
   isNozzleAvailable: 0
@@ -627,7 +628,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 22.3, y: -125.34}
+  m_AnchoredPosition: {x: 22.3, y: -36.9}
   m_SizeDelta: {x: 63.099976, y: 3.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &238431911
@@ -2980,7 +2981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionType: 2
   animationController: {fileID: 3271855170196367957}
-  extinguisher: {fileID: 0}
+  extinguisher: {fileID: 31075663}
   isCursorOver: 0
 --- !u!1 &1630197753
 GameObject:
@@ -3757,9 +3758,9 @@ RectTransform:
   - {fileID: 839379352}
   m_Father: {fileID: 132892118}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 50.8, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50.799988, y: 107.59}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2093899107
@@ -9124,7 +9125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionType: 0
   animationController: {fileID: 3271855170196367957}
-  extinguisher: {fileID: 0}
+  extinguisher: {fileID: 31075663}
   isCursorOver: 0
 --- !u!137 &7552875509822431706
 SkinnedMeshRenderer:
@@ -13995,7 +13996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionType: 1
   animationController: {fileID: 3271855170196367957}
-  extinguisher: {fileID: 0}
+  extinguisher: {fileID: 31075663}
   isCursorOver: 0
 --- !u!4 &7995136616842860699
 Transform:
@@ -14047,7 +14048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionType: 0
   animationController: {fileID: 3271855170196367957}
-  extinguisher: {fileID: 0}
+  extinguisher: {fileID: 31075663}
   isCursorOver: 0
 --- !u!199 &8378685698297335660
 ParticleSystemRenderer:
