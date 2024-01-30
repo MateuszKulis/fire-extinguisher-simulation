@@ -5,7 +5,11 @@ public class Extinguisher : MonoBehaviour
 {
     [SerializeField] private FireBehavior targetFire;
     [SerializeField] private ParticleSystem extinguishingParticleSystem;
+    [SerializeField] private AnimationController tipCameraAnimation;
+    [SerializeField] private GameObject tipUI;
+    [SerializeField] private GameObject cameraTipUI;
     [HideInInspector] public bool isSafetyPinRemoved = false;
+    [HideInInspector] public bool isNozzleAvailable = false;
     private bool isExtinguishing = false;
     private float extinguisherPowderRemaining = 10.0f;
 
@@ -28,6 +32,15 @@ public class Extinguisher : MonoBehaviour
             {
                 StopExtinguishing();
             }
+        }
+        if (isSafetyPinRemoved)
+        {
+            tipCameraAnimation.PlayAnimation("CameraTip2");
+        }
+        if (isNozzleAvailable)
+        {
+            tipUI.SetActive(true);
+            cameraTipUI.SetActive(false);
         }
     }
 

@@ -31,6 +31,7 @@ public class InteractableObject : MonoBehaviour
                 if (extinguisher.isSafetyPinRemoved)
                 {
                     animationController.PlayAnimation("NozzleSettingExtinguisher");
+                    extinguisher.isNozzleAvailable = true;
                 }
                 break;
             case InteractionType.Handle:
