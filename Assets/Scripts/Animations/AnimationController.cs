@@ -24,9 +24,9 @@ public class AnimationController : MonoBehaviour
 
         foreach (GameObject safetyPin in safetyPins)
         {
+            safetyPin.GetComponent<InteractableObject>().extinguisher.isSafetyPinRemoved = true;
             GameObject clonedSafetyPin = Instantiate(safetyPin, safetyPin.transform.position, safetyPin.transform.rotation);
-            clonedSafetyPin.transform.SetParent(null);
-
+            clonedSafetyPin.transform.SetParent(null);  
             Destroy(clonedSafetyPin.GetComponent<InteractableObject>());
 
             Rigidbody rb = clonedSafetyPin.AddComponent<Rigidbody>();

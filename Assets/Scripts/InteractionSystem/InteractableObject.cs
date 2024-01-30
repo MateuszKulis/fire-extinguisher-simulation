@@ -5,7 +5,7 @@ public class InteractableObject : MonoBehaviour
     public enum InteractionType { SafetyPin, Nozzle, Handle }
     public InteractionType interactionType;
     [SerializeField] private AnimationController animationController;
-    [SerializeField] private Extinguisher extinguisher;
+    public Extinguisher extinguisher;
     [SerializeField] private bool isCursorOver = false;
 
     void OnMouseEnter()
@@ -26,7 +26,6 @@ public class InteractableObject : MonoBehaviour
         {
             case InteractionType.SafetyPin:
                 animationController.PlayAnimation("UnlockingExtinguisher");
-                extinguisher.isSafetyPinRemoved = true;
                 break;
             case InteractionType.Nozzle:
                 if (extinguisher.isSafetyPinRemoved)

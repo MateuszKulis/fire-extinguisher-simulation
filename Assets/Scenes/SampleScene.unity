@@ -1378,6 +1378,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 175483689}
   m_LocalEulerAnglesHint: {x: 0, y: 40.967, z: 0}
+--- !u!1 &1542561569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1542561570}
+  - component: {fileID: 1542561571}
+  - component: {fileID: 1542561572}
+  m_Layer: 0
+  m_Name: collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1542561570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542561569}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3271855170196367955}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1542561571
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542561569}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.57
+  m_Height: 16.17
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1542561572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542561569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4c521493399a24eafc89d77c2e403f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionType: 2
+  animationController: {fileID: 3271855170196367957}
+  extinguisher: {fileID: 3271855170196367956}
+  isCursorOver: 0
 --- !u!1 &1788665226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1545,6 +1617,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7995136616842860699}
   - component: {fileID: 3077576642385369718}
+  - component: {fileID: 7995136616842860700}
+  - component: {fileID: 7995136616842860701}
   m_Layer: 0
   m_Name: Seal
   m_TagString: Untagged
@@ -6440,6 +6514,7 @@ Transform:
   - {fileID: 7995136616842860699}
   - {fileID: 6111516645487015122}
   - {fileID: 5371088796560784630}
+  - {fileID: 1542561570}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -2.481, z: 0}
 --- !u!114 &3271855170196367956
@@ -6694,7 +6769,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.005518996
-  m_Center: {x: 0, y: 0.003, z: 0.08935149}
+  m_Center: {x: -0.004, y: 0, z: 0.09395149}
 --- !u!114 &6760767178083875055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11597,6 +11672,43 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3271855170196367955}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &7995136616842860700
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559420562537135928}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.0031
+  m_Center: {x: -0.0055084187, y: 0.003, z: 0.08648352}
+--- !u!114 &7995136616842860701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559420562537135928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4c521493399a24eafc89d77c2e403f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionType: 0
+  animationController: {fileID: 3271855170196367957}
+  extinguisher: {fileID: 3271855170196367956}
+  isCursorOver: 0
 --- !u!199 &8378685698297335660
 ParticleSystemRenderer:
   serializedVersion: 6
