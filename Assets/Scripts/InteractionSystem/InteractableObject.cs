@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class InteractableObject : MonoBehaviour
 {
-    [SerializeField] private enum InteractionType { SafetyPin, Nozzle, Handle }
-    [SerializeField] private InteractionType interactionType;
+    public enum InteractionType { SafetyPin, Nozzle, Handle }
+    public InteractionType interactionType;
     [SerializeField] private AnimationController animationController;
     [SerializeField] private Extinguisher extinguisher;
     [SerializeField] private bool isCursorOver = false;
