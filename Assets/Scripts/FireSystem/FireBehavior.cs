@@ -1,7 +1,7 @@
 using UnityEngine;
 public class FireBehavior : MonoBehaviour
 {
-    public float fireLife = 1.0f;
+    [SerializeField]private float fireLife = 1.0f;
     private bool isBeingExtinguished = false;
     private ParticleSystem fireParticleSystem;
 
