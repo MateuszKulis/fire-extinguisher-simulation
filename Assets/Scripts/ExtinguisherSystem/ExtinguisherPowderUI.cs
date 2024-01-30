@@ -14,6 +14,10 @@ public class ExtinguisherPowderUI : MonoBehaviour
     private void UpdatePowderRemainingSlider(float powderRemaining)
     {
         powderRemainingSlider.value = powderRemaining / 10.0f;
+        if(powderRemainingSlider.value <= 0)
+        {
+            powderRemainingSlider.gameObject.SetActive(false);
+        }
     }
 
     void OnDestroy()
