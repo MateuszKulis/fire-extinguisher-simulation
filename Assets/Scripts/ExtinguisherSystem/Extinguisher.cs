@@ -9,6 +9,10 @@ public class Extinguisher : MonoBehaviour
     [SerializeField] private GameObject tipUI;
     [SerializeField] private GameObject heightSlider;
     [SerializeField] private GameObject cameraTipUI;
+    [SerializeField] private AudioSource pinSound;
+    [SerializeField] private AudioClip clip;
+    [SerializeField] private AudioClip clipPowder;
+    [HideInInspector] public bool isSound = false;
     [HideInInspector] public bool isSafetyPinRemoved = false;
     [HideInInspector] public bool isNozzleAvailable = false;
     private bool isExtinguishing = false;
@@ -20,6 +24,10 @@ public class Extinguisher : MonoBehaviour
     {
         if (isExtinguishing)
         {
+            if (pinSound != null && !pinSound.isPlaying)
+            {
+                pinSound.PlayOneShot(clipPowder);
+            }
             extinguisherPowderRemaining -= Time.deltaTime;
             if (extinguisherPowderRemaining <= 0.0f)
             {
@@ -37,6 +45,11 @@ public class Extinguisher : MonoBehaviour
         if (isSafetyPinRemoved)
         {
             tipCameraAnimation.PlayAnimation("CameraTip2");
+            if (pinSound != null && !pinSound.isPlaying && !isSound)
+            {
+                pinSound.PlayOneShot(clip);
+                isSound = true;
+            }
         }
         if (isNozzleAvailable)
         {
@@ -63,6 +76,7 @@ public class Extinguisher : MonoBehaviour
 
     private void StopExtinguishing()
     {
+        pinSound.Stop();
         isExtinguishing = false;
         targetFire.StopExtinguishing();
         extinguishingParticleSystem.Stop();

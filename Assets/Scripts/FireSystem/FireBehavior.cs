@@ -4,12 +4,14 @@ using System;
 public class FireBehavior : MonoBehaviour
 {
     [SerializeField] private float fireLife = 1.0f;
+    [SerializeField] private AudioSource fireAudio;
     private bool isBeingExtinguished = false;
     private bool isExtinguished = false; 
     private ParticleSystem fireParticleSystem;
 
     public event Action<float> OnFireLifeChanged;
     public event Action OnFireExtinguished;
+
 
     void Start()
     {
@@ -48,6 +50,10 @@ public class FireBehavior : MonoBehaviour
         if (fireLife <= 0.0f && fireParticleSystem.isPlaying)
         {
             fireParticleSystem.Stop();
+            if (fireAudio != null && fireAudio.isPlaying)
+            {
+                fireAudio.Stop();
+            }
         }
         else if (fireLife > 0.0f && !fireParticleSystem.isPlaying && !isExtinguished)
         {
